@@ -1,3 +1,6 @@
+// @use "quasar/src/css/variables" as q;
+// @use "sass:map";
+
 // Quasar SCSS (& Sass) Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
@@ -12,14 +15,64 @@
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
 
-$primary   : #1976D2;
-$secondary : #26A69A;
-$accent    : #9C27B0;
 
+// #################################################
+// COLORS
+// #################################################
+$primary   : #5c93c3;
+$secondary : #26A69A;
+$font: #333;
 $dark      : #1D1D1D;
 $dark-page : #121212;
+$accent    : #9C27B0;
+$white: #fff;
+$background: #F6F6F6;
+$borders: lightgrey;
 
-$positive  : #21BA45;
+$positive  : #26A69A;
 $negative  : #C10015;
 $info      : #31CCEC;
 $warning   : #F2C037;
+
+
+// =======================
+//	Breakpoints
+// =======================
+
+//Quasar breakpoints
+$breakpoint-xs: 400px;
+$breakpoint-sm: 1023px;
+$breakpoint-md: 1280px;
+$breakpoint-lg: 1680px;
+
+
+$breakpoints: (
+	xs: 400px,
+	s: 476px,
+	m: 768px,
+	l: 1024px,
+	xl: 1280px,
+	xxl: 1680px,
+);
+
+
+// =======================
+//	Font Sizes
+// =======================
+
+$text-body: 16px;
+$headline-h1:44px;
+$headline-h2: 28px;
+$headline-h3: 21px;
+$headline-h4: 21px;
+$headline-h5:18px;
+$headline-h6:16px;
+
+
+// =======================
+//	Layout
+// =======================
+$max-width: 1400px;
+$space-margin: 30px;
+$pad: 15px;
+$ui-height: 40px;

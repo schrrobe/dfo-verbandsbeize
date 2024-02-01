@@ -1,0 +1,77 @@
+@import 'quasar.variables.scss';
+@import 'mixins.scss';
+
+html {
+	box-sizing: border-box;
+	// font: 100 87.5%/1.5 map-get($fonts,primary);
+	color: $font;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	height: 100%;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: $background;
+  font-size: $text-body;
+
+	// Prevent scrolling of page
+	// eg. for opened modals
+	&.no-scrolling {
+		overflow: hidden;
+	}
+}
+
+
+strong {
+	font-weight: bold;
+}
+
+.show-mobile {
+  display:block;
+  @include bp(s){
+    display:none;
+  }
+}
+.show-desktop {
+  display:none;
+  @include bp(m){
+    display:block;
+  }
+}
+
+.text-highlight {
+  background: linear-gradient(180deg,rgba(255,255,255,0)50%,lightgrey 50%);
+  border-radius: 2px;
+  pad: $pad;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.4;
+
+  &.text-highlight-primary{
+    background: linear-gradient(180deg,rgba(255,255,255,0)50%,$primary 50%);
+
+  }
+
+}
+
+h1 {
+  font-size: $headline-h2;
+  line-height: 2.2rem;
+  color: $primary;
+  font-weight: 600;
+  @include bp(l){
+    font-size: $headline-h1;
+  }
+}
+
+.space-6 {
+  margin-bottom: $pad*3;
+  @include bp(l){
+    margin-bottom: $pad*6;
+  }
+}

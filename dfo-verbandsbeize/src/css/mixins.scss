@@ -1,0 +1,57 @@
+// =======================
+//	BREAKPOINTS
+// =======================
+
+@mixin bp($breakpoint, $width: min) {
+  @if (map-get($breakpoints, $breakpoint)) == null {
+
+    // If not found use breakpoint as value for width
+    @if $width == min {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    } @else if $width == max {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    }
+
+  } @else {
+
+    @if $width == min {
+      @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    } @else if $width == max {
+      @media (max-width: #{map-get($breakpoints, $breakpoint)-1px}) {
+        @content;
+      }
+    }
+
+  }
+}
+
+@mixin bp-max-width($breakpoint, $width: max) { // Change $width default value to max
+  @if map-get($breakpoints, $breakpoint) == null {
+    // If not found, use breakpoint as value for width
+    @if $width == max { // Change to check $width against max
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    } @else if $width == min { // Remove the previous max condition
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    }
+  } @else {
+    @if $width == max { // Change to check $width against max
+      @media (max-width: #{map-get($breakpoints, $breakpoint) - 1px}) {
+        @content;
+      }
+    } @else if $width == min { // Remove the previous max condition
+      @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        @content;
+      }
+    }
+  }
+}
