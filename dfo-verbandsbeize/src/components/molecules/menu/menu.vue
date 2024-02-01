@@ -1,9 +1,16 @@
 <template>
   <DfoPageOverlay>
     <DfoModal>
-      <DfoButton tag="router-link" to="/" variant="primary" iconLeft="home">
-        Startseite</DfoButton
+      <DfoButton
+        v-for="(menuItem, index) in menuItems"
+        :key="index"
+        tag="router-link"
+        :to="menuItem.linkTo"
+        variant="primary"
+        :icon-left="menuItem.iconName"
       >
+        {{ menuItem.linkText }}
+      </DfoButton>
     </DfoModal>
   </DfoPageOverlay>
 </template>
@@ -20,6 +27,28 @@ const ToggleMenu = () => {
   is_expanded.value = !is_expanded.value;
   localStorage.setItem("is_expanded", is_expanded.value);
 };
+const menuItems = ref([
+  {
+    linkTo: "/",
+    iconName: "home",
+    linkText: "Startseite",
+  },
+  {
+    linkTo: "/revierkarte",
+    iconName: "map",
+    linkText: "Revierkarte",
+  },
+  {
+    linkTo: "/gruppe",
+    iconName: "group",
+    linkText: "Gruppe",
+  },
+  {
+    linkTo: "/gruppen-suche",
+    iconName: "loop",
+    linkText: "Gruppen Suche",
+  },
+]);
 </script>
 <script>
 // Set the component name explicitly
@@ -32,6 +61,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../../css/app.scss";
+
 .container-flex {
   flex-direction: row;
   flex-wrap: wrap;

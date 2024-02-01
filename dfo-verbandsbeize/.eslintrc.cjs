@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   // https://eslint.org/docs/user-guide/configuring#configuration-cascading-and-hierarchy
   // This option interrupts the configuration hierarchy at this file
@@ -5,9 +6,10 @@ module.exports = {
   root: true,
 
   parserOptions: {
+    // requireConfigFile: false,
     parser: '@babel/eslint-parser',
-    ecmaVersion: 2021, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module' // Allows for the use of imports
+    ecmaVersion: 2021,
+    sourceType: 'module',
   },
 
   env: {
@@ -16,17 +18,17 @@ module.exports = {
   },
 
   // Rules order is important, please avoid shuffling them
-  extends: ['plugin:vue/vue3-essential', 'prettier', 'plugin:storybook/recommended'],
+  extends: ['plugin:vue/vue3-essential','plugin:vue/vue3-strongly-recommended', 'prettier', 'plugin:storybook/recommended'],
 
   plugins: [
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-files
     // required to lint *.vue files
     'vue',
-    
+
     // https://github.com/typescript-eslint/typescript-eslint/issues/389#issuecomment-509292674
     // Prettier has not been included as plugin to avoid performance impact
     // add it as an extension for your IDE
-    
+
   ],
 
   globals: {
@@ -44,10 +46,9 @@ module.exports = {
 
   // add your custom rules here
   rules: {
-    
+    // ... other rules
     'prefer-promise-reject-errors': 'off',
-
     // allow debugger during development only
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  }
-}
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+  },
+};

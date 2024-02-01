@@ -6,8 +6,8 @@
   "author": "Robert\\Robert Schreiner <schreiner-robert@gmx.net>",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.vue ./",
-    "lint-fix": "npm run lint -- --fix",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "lint-fix": "eslint --ext .ts,.js,.vue --ignore-path .gitignore . --fix",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
@@ -25,7 +25,10 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
     "@babel/eslint-parser": "^7.13.14",
+    "@babel/parser": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@quasar/app-webpack": "^3.9.2",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",

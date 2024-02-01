@@ -13,7 +13,7 @@
           :key="index"
         >
           <q-expansion-item>
-            <template v-slot:header>
+            <template #header>
               <q-item-section avatar>
                 <q-avatar icon="question_mark" text-color="primary" />
               </q-item-section>

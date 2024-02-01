@@ -1,11 +1,5 @@
 <template>
-  <component
-    :is="getTag"
-    :class="classes"
-    :href="href"
-    :to="to"
-    :disabled="disabled"
-  >
+  <component :is="getTag" :class="classes" :href="href" :to="to">
     <template v-if="!loading">
       <q-icon
         v-if="iconLeft"
@@ -282,6 +276,7 @@ button,
   line-height: 1.5;
   text-align: center;
   border: 1px solid transparent;
+  letter-spacing: 0.3cap;
 }
 .router-link {
   @extend %router-link-base;
@@ -289,15 +284,26 @@ button,
   background-color: $primary;
   fill: white;
   width: 100%;
-  border-bottom: 1px solid $white;
-  border-top: 1px solid $white;
+  border-bottom: 1px solid $borders;
+  border-top: 1px solid $borders;
+  opacity: 0.8;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
   &:hover {
     background-color: $primary;
-    opacity: 0.8;
+    opacity: 1;
     border-bottom: 2px solid $white;
     border-top: 2px solid $white;
   }
 }
+
 .icon {
   margin-bottom: 5px;
   &.icon--left {

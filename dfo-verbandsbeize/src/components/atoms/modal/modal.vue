@@ -1,7 +1,9 @@
 <template>
   <div :class="['modal', { 'modal--full': full }]">
     <div v-if="closable" class="m-actions">
-      <button type="button" class="m-close" @click="close">X</button>
+      <button type="button" class="m-close" @click="close">
+        <q-icon name="close" :size="20" color="white" />
+      </button>
     </div>
 
     <slot name="beforeContent" />
@@ -47,7 +49,6 @@ export default {
   position: relative;
   display: block;
   width: 100%;
-  max-width: 700px;
   margin: 20% auto auto;
   background-color: $primary;
   border-radius: 2px;
@@ -61,7 +62,7 @@ export default {
   .m-actions {
     display: flex;
     justify-content: end;
-    padding: 10px 0;
+    padding: $pad;
 
     @include bp(m) {
       padding: 10px;
@@ -87,7 +88,7 @@ export default {
   }
 
   .m-content {
-    padding: 0;
+    padding: 0 $pad;
 
     @include bp(m) {
       padding: 10px;
