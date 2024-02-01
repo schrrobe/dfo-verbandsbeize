@@ -1,3 +1,3 @@
-import DofHeader from './header.vue';
+import DofHeader from "./header.vue";
 
-export {DofHeader}
+export { DofHeader };

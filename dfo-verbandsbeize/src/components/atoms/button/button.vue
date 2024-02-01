@@ -53,14 +53,13 @@
   </component>
 </template>
 
-
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from "vue";
 // import PwLoadingSpinner from '../loading-spinner/LoadingSpinner.vue'
 // import router from '@/router/index.js';
 
 export default defineComponent({
-  name: 'DfoButton',
+  name: "DfoButton",
   // components: {PwLoadingSpinner, PwIcon},
   props: {
     href: String,
@@ -78,47 +77,47 @@ export default defineComponent({
     loading: Boolean,
   },
   computed: {
-    getTag(){
-      if(!this.tag){
-        return 'button';
+    getTag() {
+      if (!this.tag) {
+        return "button";
       }
-      if(this.tag === 'button'){
-        return 'button';
+      if (this.tag === "button") {
+        return "button";
       }
-      if(this.tag === 'a'){
-        return 'a';
+      if (this.tag === "a") {
+        return "a";
       }
-      if(this.tag === 'router-link'){
-        return 'router-link';
+      if (this.tag === "router-link") {
+        return "router-link";
       }
 
-      return 'button';
+      return "button";
     },
 
     classes() {
       return {
-        'button': this.getTag === 'button',
-        'router-link': this.getTag === 'router-link',
+        button: this.getTag === "button",
+        "router-link": this.getTag === "router-link",
         [`button--variant-${this.variant}`]: this.variant,
-        'button--block': this.block,
-        'button--disabled': this.disabled,
-        'button--icon-left': this.iconLeft,
-        'button--icon-right': this.iconRight,
-        'button--icon-only': this.hasIcon && !this.hasText,
-        'button--loading': this.loading,
-      }
+        "button--block": this.block,
+        "button--disabled": this.disabled,
+        "button--icon-left": this.iconLeft,
+        "button--icon-right": this.iconRight,
+        "button--icon-only": this.hasIcon && !this.hasText,
+        "button--loading": this.loading,
+      };
     },
 
     hasIcon() {
-      return this.iconLeft || this.iconRight
+      return this.iconLeft || this.iconRight;
     },
 
     hasText() {
-      return this.$slots
+      return this.$slots;
     },
 
-    hasIconAndText(){
-      return this.hasIcon && this.areAllSlotsEmpty
+    hasIconAndText() {
+      return this.hasIcon && this.areAllSlotsEmpty;
     },
 
     areAllSlotsEmpty() {
@@ -130,25 +129,35 @@ export default defineComponent({
       return true; // All slots are empty
     },
 
-    iconColor(){
-      if(['primary','download','paid','credit','payment-reminder',].includes(this.variant)){
-        return 'white';
+    iconColor() {
+      if (
+        ["primary", "download", "paid", "credit", "payment-reminder"].includes(
+          this.variant
+        )
+      ) {
+        return "white";
       }
-      if(['primary-inverse',].includes(this.variant)){
-        return 'purple-darkest';
+      if (["primary-inverse"].includes(this.variant)) {
+        return "purple-darkest";
       }
-      return 'white';
+      return "white";
     },
 
-    hasLightLoadingSpinner(){
-      return ['primary','download','paid','credit','payment-reminder',].includes(this.variant)
-    }
+    hasLightLoadingSpinner() {
+      return [
+        "primary",
+        "download",
+        "paid",
+        "credit",
+        "payment-reminder",
+      ].includes(this.variant);
+    },
   },
-})
+});
 </script>
 
 <style scoped lang="scss">
-@import '../../../css/app.scss';
+@import "../../../css/app.scss";
 a,
 button,
 .button {
@@ -176,7 +185,7 @@ button,
   border-radius: 0;
   outline: 0;
   cursor: pointer;
-  transition: .2s ease-in-out all;
+  transition: 0.2s ease-in-out all;
   appearance: none;
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
   -webkit-font-smoothing: antialiased;
@@ -190,7 +199,7 @@ button,
 // Base
 // =======================
 %button-variant-base {
-  padding: $pad $pad*3;
+  padding: $pad $pad * 3;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -221,7 +230,6 @@ button,
       background-color: $primary;
       opacity: 0.8;
       border: 1px solid black;
-
     }
   }
   // =======================
@@ -232,7 +240,7 @@ button,
 
     color: $primary;
     border: 2px solid $primary;
-    background-color: white ;
+    background-color: white;
     fill: white;
 
     &:hover {
@@ -241,10 +249,9 @@ button,
     }
   }
 
-
   &.button--disabled {
     cursor: default;
-    opacity: .5;
+    opacity: 0.5;
     pointer-events: none;
   }
 
@@ -264,48 +271,44 @@ button,
   }
 }
 
-  // =======================
-  // Router-Link
-  // =======================
+// =======================
+// Router-Link
+// =======================
 
 %router-link-base {
-  padding: $pad $pad*2;
+  padding: $pad $pad * 2;
   font-weight: 400;
   font-size: 22px;
   line-height: 1.5;
   text-align: center;
   border: 1px solid transparent;
-  }
-.router-link{
+}
+.router-link {
   @extend %router-link-base;
   color: $white;
   background-color: $primary;
   fill: white;
   width: 100%;
   border-bottom: 1px solid $white;
-  border-top:1px solid $white;
-    &:hover {
-      background-color: $primary;
-      opacity: 0.8;
-      border-bottom: 2px solid $white;
-      border-top:2px solid $white;
-    }
-
+  border-top: 1px solid $white;
+  &:hover {
+    background-color: $primary;
+    opacity: 0.8;
+    border-bottom: 2px solid $white;
+    border-top: 2px solid $white;
+  }
 }
 .icon {
-    margin-bottom: 5px;
-    &.icon--left {
-      margin-right: 5px;
-    }
-    &.icon--right {
-      margin-left: 5px;
-    }
-    &.icon--only {
-      margin-left: 5px;
-      margin-right: 5px;
-    }
+  margin-bottom: 5px;
+  &.icon--left {
+    margin-right: 5px;
   }
-
-
-
+  &.icon--right {
+    margin-left: 5px;
+  }
+  &.icon--only {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
 </style>

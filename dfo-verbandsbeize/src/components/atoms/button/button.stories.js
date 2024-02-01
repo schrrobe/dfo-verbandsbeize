@@ -1,7 +1,7 @@
-import DfoButton from './button.vue';
+import DfoButton from "./button.vue";
 
 export default {
-  title: 'Atoms/Button',
+  title: "Atoms/Button",
   component: DfoButton,
   args: {},
 };
@@ -13,8 +13,9 @@ const Template = (args, { argTypes }) => ({
 });
 
 export const Default = Template.bind({});
-Default.args = { /* your default args */ };
-
+Default.args = {
+  /* your default args */
+};
 
 // export const Button = {
 //     args: {
@@ -325,7 +326,6 @@ Default.args = { /* your default args */ };
 //                   </pw-column>
 //                 </pw-container>
 //               </div>
-
 
 //               </div>
 //              `,

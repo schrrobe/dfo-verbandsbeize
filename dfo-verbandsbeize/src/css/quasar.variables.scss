@@ -15,25 +15,23 @@
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
 
-
 // #################################################
 // COLORS
 // #################################################
-$primary   : #5c93c3;
-$secondary : #26A69A;
+$primary: #5c93c3;
+$secondary: #26a69a;
 $font: #333;
-$dark      : #1D1D1D;
-$dark-page : #121212;
-$accent    : #9C27B0;
+$dark: #1d1d1d;
+$dark-page: #121212;
+$accent: #9c27b0;
 $white: #fff;
-$background: #F6F6F6;
+$background: #f6f6f6;
 $borders: lightgrey;
 
-$positive  : #26A69A;
-$negative  : #C10015;
-$info      : #31CCEC;
-$warning   : #F2C037;
-
+$positive: #26a69a;
+$negative: #c10015;
+$info: #31ccec;
+$warning: #f2c037;
 
 // =======================
 //	Breakpoints
@@ -45,29 +43,26 @@ $breakpoint-sm: 1023px;
 $breakpoint-md: 1280px;
 $breakpoint-lg: 1680px;
 
-
 $breakpoints: (
-	xs: 400px,
-	s: 476px,
-	m: 768px,
-	l: 1024px,
-	xl: 1280px,
-	xxl: 1680px,
+  xs: 400px,
+  s: 476px,
+  m: 768px,
+  l: 1024px,
+  xl: 1280px,
+  xxl: 1680px,
 );
-
 
 // =======================
 //	Font Sizes
 // =======================
 
 $text-body: 16px;
-$headline-h1:44px;
+$headline-h1: 44px;
 $headline-h2: 28px;
 $headline-h3: 21px;
 $headline-h4: 21px;
-$headline-h5:18px;
-$headline-h6:16px;
-
+$headline-h5: 18px;
+$headline-h6: 16px;
 
 // =======================
 //	Layout
